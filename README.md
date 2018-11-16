@@ -1,4 +1,4 @@
-<h1> Living Room </h1>
+<h1> Living Room Redesign</h1>
 
 <h6>Emily Quigley</h6>  
 
@@ -6,10 +6,15 @@
 
 <h3>My Question: What if there was machine learning for that? </h3>
 
+<h3>The Full Vision</h3> 
+
+
 <h3>Phase 1:</h3> Take a photo of an outdated living room and train a model to segment the sofa. This will later be used to replace with a new sofa which will provide the "redesign" element.
 <br>
 <br>
-![] img ='segnetarch.png'
+
+<img src='images/segnetarch.png'>
+
 
 <h6> Data Set:</h6> ADE20K Living Room Images
 This dataset came with an original image and a segmented image for each item in the room. Upon diving into the dataset I discovered that while the photos looked like each object was colored according to a specific code, they were not the same RGB values. I knew I was going to have to do a significant amount of cleaning on my data to make these images work.
@@ -29,7 +34,7 @@ Another complication is with resizing. I had used resize which was SKimage's res
 <br>
 Later on I wanted to find the unique pixel colors and saw I was now getting 1105 unique pixel colors whereas previously I had gotten right around 35. I traced this back line by line to the resize function. I added the nearest neighbors interpolation method to solve this problem. Interpolation is a technique that helps handle distortion when resizing.
 
-![] img='interpolation.png'
+<img src='images/interpolation.png'>
 
 <h3>Solution</h3>
 1. For each image, find the unique RGB values
@@ -37,61 +42,4 @@ Later on I wanted to find the unique pixel colors and saw I was now getting 1105
 3. Make a mask for each unique RGB value in order to display an object.
 
 
-<h3> CNN Modeling </h3>
 
-
-
-1. 5 hidden layers
-2. Each layer used padding
-3. Optimizer used was Adadelta
-4. Every activation was ReLU except the end was Softmax
-
-One issue we encountered was downsampling beyond a 1 X 1 image.
-<br>
-We poured significant effort into perfecting a Convolutional Neural Network.  After numerous errors Chris perfected the network.
-
-<img src="10Images.png">
-<img src="history.png">
-<img src="full_model_acc_loss.png">
-
-<h3> VGG16  Modeling </h3>
-<img src="vgg_macroarchitecture.png">
-1. VGG is  pretrained model so all of the inner workings you see in the photo, we aren't able to make changes
-2. VGG 16 indicates 16 weight layers
-<!-- <img src="vgg_macroarchitecture.png" alt="Smiley face" height="100" width="100"> -->
-<br>
-3. First, we ran through one batch of 10,00 to test on a smaller segment of photos
-4. Model clearly did not perform well because the true label wasn't in our top 3 predictions
-5. We assume our images didn't classify well due to the low resolution
-
-<img src="percentages.png" height="500">
-
-<img src="value3.png">
-<img src="value6.png">
-<img src="value7.png">
-<img src="value9.png">
-<img src="value1.png">
-<img src="value2.png">
-<img src="value14.png">
-<img src="value16.png">
-
-<h3> Complications </h3>
-* Data organization issues
-* Naming issues
-* Sizing the images after pooling, used padding to solve
-* Initial model was guessing 10%
-* Data sizing issues to make batches and then resize larger for the VGG model
-
-<h3> Learnings </h3>
-* Be patient, models take time to improve,  if you don't wait long enough you might change something pre-emptively
-
-<h3> Future Work </h3>
-* Build and perfect a model the night before.
-* Understand shapes
-* Drop $2500 for high-end computing power (stand up Amazon account sooner)
-* Transfer Learning
-<br>
-* Test with new images from online
-* Use better resolution photos to improve our model
-* Test with VGG19
-# living_room_ml
