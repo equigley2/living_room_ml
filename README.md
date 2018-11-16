@@ -37,20 +37,23 @@ To create my target images I wrote my code to identify all of the unique color v
 <p align="center">
   <img src='images/sample_mask3.png' height=200/></p>
 
-<h3>Complications: If you are using OpenCV, only use OpenCV</h3>
+<h3>Complications:</h3>
+<h5> If you are using OpenCV, only use OpenCV</h5>
 OpenCV is more technical to work with than other python image libraries but also provides more advanced functionality.
 <br>
 <br>
 Instead of RGB, OpenCV uses BGR so the color values are reversed. 
-
-Another complication is with resizing. I had used resize which was SKimage's resize instead of cv2.resize. I was trying to use some advanced function later on in my code and was getting error messages mentioning CV_8U. I determined it wanted 8 bytes so I started checking the bytes in different stages and found out that after resizing I was getting a data type float64. When I switched to cv.2 resize it solved this problem.
 <br>
 <br>
-Later on I wanted to find the unique pixel colors and saw I was now getting 1105 unique pixel colors whereas previously I had gotten right around 35. I traced this back line by line to the resize function. I added the nearest neighbors interpolation method to solve this problem. Interpolation is a technique that helps handle distortion when resizing.
+Another complication is with resizing. I had used resize which was skimage's resize instead of cv2.resize. I was trying to use some advanced function later on in my code and was getting error messages mentioning CV_8U. I found out it wanted 8 bits/pixel so I started checking the data type in different stages and found out that after resizing I was getting a data type float64. When I switched to cv.2 resize it solved this problem. Going forward I now know that 8 bits/pixel is standard and it's what you want to use when saving or displaying an image and the float data types can be beneficial when you need to perform calculations since the values are between 0 and 1.
+<br>
+<br>
+Later on I wanted to find the unique pixel colors and saw I was now getting 1105 unique pixel colors whereas previously I had gotten right around 35. I traced this back line by line to the resize function. When you resize an image, the space between the pixels gets approximated and this is what was inreasing my unique pixel colors to 1105. I added the nearest neighbors interpolation method to solve this problem. Instead of creating a new color value from averaging, the nearest neighbors uses the nearest already exisitng color.
 
 <p align="center">
   <img src='images/interpolation.png' height=400/></p>
 
 
-
-
+<h3>Future Work</h3>
+Implement autoencoder
+Srape the web for my redesigned images
