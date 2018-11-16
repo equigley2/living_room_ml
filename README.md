@@ -20,7 +20,7 @@
 <p align="center">
   <img src='images/segnetarch.png' height=200/></p>
   
-<p align="center">*The end goal will be to segment all key items in the image<p align="center">
+<p align="center">Eventually the goal will be to segment all key items in the image<p align="center">
 
 
 <h3> Data Set:</h3> ADE20K Living Room Images
@@ -28,7 +28,7 @@ This dataset came with an original image and a segmented image for each item in 
 
 
 <h3>Creating Targets</h3>
-To create my target images I wrote my code to identify all of the unique color values from my segmented images. I took the unqiue colors values and looped through each object creating a mask and asking the user for input if the object was a couch or not. To help this go by faster, I found the frequency of each color value and sorted my list to start with the highest frequency colors first with the rationale being that the sofa will be one of the largest objects in the room and therefore towards the top of the list.
+To create my target images I wrote my code to identify all of the unique color values from my segmented images. I took the unqiue colors values and looped through each object creating a mask and asking the user for input if the object was a couch or not. To help this go by faster, I found the frequency of each color value and sorted my list to start with the highest frequency colors first with the rationale being that the sofa will be one of the largest objects in the room and therefore towards the top of the list. I did this for approximately 700 images and saved the sofa as black and white as shown earlier.
 
 <p align="center">
   <img src='images/sample_mask1.png' height=200/></p>
@@ -37,22 +37,20 @@ To create my target images I wrote my code to identify all of the unique color v
 <p align="center">
   <img src='images/sample_mask3.png' height=200/></p>
 
-<h3>Complications</h3>
-OpenCV can be a love, hate relationship. It's very technical to work with but also provides more advanced functionality.
+<h3>Complications: If you are using OpenCV, only use OpenCV</h3>
+OpenCV is more technical to work with than other python image libraries but also provides more advanced functionality.
 <br>
 <br>
-Instead of RGB, OpenCV uses BGR so I discovered the hard way, if you are using OpenCV only use OpenCV for image processing.
-Another complication is with resizing. I had used resize which was SKimage's resize instead of cv2.resize. I was trying to use some advanced function later on and was getting error messages mentioning CV_8U. I determined it wanted 8 bytes so I started checking the bytes in different stages and found out that after resizing I was getting a type float64. When I switched to cv.2 resize it solved this problem.
+Instead of RGB, OpenCV uses BGR so the color values are reversed. 
+
+Another complication is with resizing. I had used resize which was SKimage's resize instead of cv2.resize. I was trying to use some advanced function later on in my code and was getting error messages mentioning CV_8U. I determined it wanted 8 bytes so I started checking the bytes in different stages and found out that after resizing I was getting a data type float64. When I switched to cv.2 resize it solved this problem.
 <br>
 <br>
 Later on I wanted to find the unique pixel colors and saw I was now getting 1105 unique pixel colors whereas previously I had gotten right around 35. I traced this back line by line to the resize function. I added the nearest neighbors interpolation method to solve this problem. Interpolation is a technique that helps handle distortion when resizing.
 
-<img src='images/interpolation.png'>
+<p align="center">
+  <img src='images/interpolation.png' height=400/></p>
 
-<h3>Solution</h3>
-1. For each image, find the unique RGB values
-2. Argsort and a mask to sort the RGB values from highest frequency to lowest
-3. Make a mask for each unique RGB value in order to display an object.
 
 
 
