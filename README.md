@@ -4,22 +4,24 @@
 
 <h3>Premise:</h3> Part of my hobby, flipping houses, is to tear out an outdated room and build it back from scratch. Design becomes really important because having a well designed home will increase your profits when you sell. It can be really time consuming to develop the new design with fresh colors and materials and also hard to envision when you are staring at a room torn down to the studs.
 
-<p align="center">What if there was machine learning for that?<p align="center">
+<h3><p align="center">What if there was machine learning for that?<p align="center"></h3>
 
 <p align="center">
   <img src='images/model_diagram.png' width=400/></p>
 
-<h3>Phase 1:</h3> Take a photo of an outdated living room and train a model to segment the sofa. This will later be used to replace with a new sofa which will provide the "redesign" element.
-<br>
-<br>
+<h3>Phase 1:</h3> 
 
+Take a photo of an outdated living room and train a model to segment the sofa. This will later be used to replace with a new sofa which will provide the "redesign" element.
+
+<h5>Downsize:</h5> Working with images can be computationally expensive so for the purpose of this project I have chosen to focus solely on the sofa by making sofa pixels white and making all other pixels black.
+<br>
+<br>
 <img src='images/segnetarch.png'>
 
 
 <h6> Data Set:</h6> ADE20K Living Room Images
 This dataset came with an original image and a segmented image for each item in the room. Upon diving into the dataset I discovered that while the photos looked like each object was colored according to a specific code, they were not the same RGB values. I knew I was going to have to do a significant amount of cleaning on my data to make these images work.
 
-<h3>Downsize:</h3> Working with images can be computationally expensive so for the purpose of this project I have chosen to focus solely on the sofa by making sofa pixels white and making all other pixels black.
 
 <h3>Creating Labels</h3>
 
