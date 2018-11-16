@@ -20,15 +20,22 @@
 <p align="center">
   <img src='images/segnetarch.png' height=200/></p>
   
-<h3><p align="center">*The end goal will be to segment all key items in the image<p align="center"></h3>
+<p align="center">*The end goal will be to segment all key items in the image<p align="center">
 
 
-<h6> Data Set:</h6> ADE20K Living Room Images
+<h3> Data Set:</h3> ADE20K Living Room Images
 This dataset came with an original image and a segmented image for each item in the room. Upon diving into the dataset I discovered that while the photos looked like each object was colored according to a specific code, they were not the same RGB values. I knew I was going to have to do a significant amount of cleaning on my data to make these images work.
 
 
-<h3>Creating Labels</h3>
+<h3>Creating Targets</h3>
+To create my target images I wrote my code to identify all of the unique color values from my segmented images. I took the unqiue colors values and looped through each object creating a mask and asking the user for input if the object was a couch or not. To help this go by faster, I found the frequency of each color value and sorted my list to start with the highest frequency colors first with the rationale being that the sofa will be one of the largest objects in the room and therefore towards the top of the list.
 
+<p align="center">
+  <img src='images/sample_mask1.png' height=200/></p>
+<p align="center">
+  <img src='images/sample_mask2.png' height=200/></p>
+<p align="center">
+  <img src='images/sample_mask3.png' height=200/></p>
 
 <h3>Complications</h3>
 OpenCV can be a love, hate relationship. It's very technical to work with but also provides more advanced functionality.
