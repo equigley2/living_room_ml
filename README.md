@@ -4,7 +4,7 @@
 
 <h3>Premise:</h3> Part of my hobby, flipping houses, is to tear out an outdated room and build it back from scratch. Design becomes really important because having a well designed home will increase your profits when you sell. It can be really time consuming to develop the new design with fresh colors and materials and also hard to envision when you are staring at a room torn down to the studs.
 
-<h3>My Question: What if there was machine learning for that? </h3>
+<p align="center">What if there was machine learning for that?<p align="center">
 
 <p align="center">
   <img src='images/model_diagram.png' width=400/></p>
