@@ -7,7 +7,9 @@
 <h3><p align="center">What if there was machine learning for that?<p align="center"></h3>
 
 <p align="center">
-  <img src='images/model_diagram.png' width=400/></p>
+  <img src='images/segnetarch.png' height=200/></p>
+  
+<p align="center">Eventually the goal will be to segment all key items in the image<p align="center">
 
 <h3>Model 1:</h3> 
 
@@ -18,9 +20,7 @@
 <br>
 
 <p align="center">
-  <img src='images/segnetarch.png' height=200/></p>
-  
-<p align="center">Eventually the goal will be to segment all key items in the image<p align="center">
+  <img src='images/model_diagram.png' width=400/></p>
 
 
 <h3> Data Set:</h3> ADE20K Living Room Images
@@ -55,7 +55,7 @@ Later on I wanted to find the unique pixel colors and saw I was now getting 1105
 
 
 <h3>Future Work</h3>
-<img src='images/model_in_progress.png' height=300/>
+<img src='images/model_in_progress.png' height=150/>
 Implement autoencoder to segment
 <br>
 Srape the web for my redesigned images
