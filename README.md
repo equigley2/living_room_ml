@@ -61,3 +61,4 @@ Implement autoencoder to segment
 <br>
 Srape the web for my redesigned images
 <br>
+Research generative portion for the second model
