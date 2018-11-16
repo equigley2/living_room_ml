@@ -9,14 +9,18 @@
 <p align="center">
   <img src='images/model_diagram.png' width=400/></p>
 
-<h3>Phase 1:</h3> 
+<h3>Model 1:</h3> 
 
-Take a photo of an outdated living room and train a model to segment the sofa. This will later be used to replace with a new sofa which will provide the "redesign" element.
+<h5>Purpose:</h5>Take a photo of an outdated living room and train a model to segment the sofa. This will later be used to replace with a new sofa which will provide the "redesign" element.
 
 <h5>Downsize:</h5> Working with images can be computationally expensive so for the purpose of this project I have chosen to focus solely on the sofa by making sofa pixels white and making all other pixels black.
 <br>
 <br>
-<img src='images/segnetarch.png'>
+
+<p align="center">
+  <img src='images/segnetarch.png' height=200/></p>
+  
+<h3><p align="center">*The end goal will be to segment all key items in the image<p align="center"></h3>
 
 
 <h6> Data Set:</h6> ADE20K Living Room Images
