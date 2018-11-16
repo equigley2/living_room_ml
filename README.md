@@ -55,5 +55,8 @@ Later on I wanted to find the unique pixel colors and saw I was now getting 1105
 
 
 <h3>Future Work</h3>
-Implement autoencoder
+<img src='images/model_in_progress.png' height=300/>
+Implement autoencoder to segment
+<br>
 Srape the web for my redesigned images
+<br>
