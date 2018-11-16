@@ -17,12 +17,12 @@
 
 <p align="center">
   <img src='images/model_diagram.png' width=400/></p>
-
+<br>
+<p align="center">Eventually the goal will be to segment all key objects in the image<p align="center">
 
 <p align="center">
   <img src='images/segnetarch.png' height=200/></p>
   
-<p align="center">Eventually the goal will be to segment all key items in the image<p align="center">
 
 <h3> Data Set:</h3> ADE20K Living Room Images
 This dataset came with an original image and a segmented image for each item in the room. Upon diving into the dataset I discovered that while the photos looked like each object was colored according to a specific code, they were not the same RGB values. I knew I was going to have to do a significant amount of cleaning on my data to make these images work.
