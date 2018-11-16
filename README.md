@@ -7,7 +7,7 @@
 <h3>My Question: What if there was machine learning for that? </h3>
 
 
-<img src='images/model_diagram.png' width=400 align='middle'>
+<p> text. <img src='images/model_diagram.png' width=400 align='middle'> text.</p>
 
 <h3>Phase 1:</h3> Take a photo of an outdated living room and train a model to segment the sofa. This will later be used to replace with a new sofa which will provide the "redesign" element.
 <br>
